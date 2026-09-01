@@ -1,4 +1,4 @@
-﻿package dio.taskmanager.domain;
+package dio.taskmanager.domain;
 
 import org.springframework.util.Assert;
 
