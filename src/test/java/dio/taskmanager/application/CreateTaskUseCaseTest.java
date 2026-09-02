@@ -1,7 +1,7 @@
 package dio.taskmanager.application;
 
 import dio.taskmanager.application.input.CreateTaskInput;
-import dio.taskmanager.application.output.CreateTaskOutput;
+import dio.taskmanager.application.output.TaskOutput;
 import dio.taskmanager.domain.ITaskRepository;
 import dio.taskmanager.domain.Task;
 import org.junit.jupiter.api.Test;
@@ -9,7 +9,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Optional;
 
@@ -35,7 +34,7 @@ class CreateTaskUseCaseTest {
         when(repository.save(any(Task.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
         // when
-        CreateTaskOutput taskOutput = useCase.execute(input);
+        TaskOutput taskOutput = useCase.execute(input);
 
         // then
         assertNotNull(taskOutput);
