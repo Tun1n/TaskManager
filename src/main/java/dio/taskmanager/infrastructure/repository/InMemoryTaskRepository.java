@@ -3,6 +3,7 @@ package dio.taskmanager.infrastructure.repository;
 import dio.taskmanager.domain.ITaskRepository;
 import dio.taskmanager.domain.Task;
 import dio.taskmanager.domain.TaskId;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+@Repository
 public class InMemoryTaskRepository implements ITaskRepository {
     private final Map<TaskId, Task> storage = new HashMap<>();
     @Override
